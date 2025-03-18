@@ -9,7 +9,7 @@ Resources:
       ImageId: ami-085ad6ae776d8f09c
       SecurityGroups:
         - !Ref InstanceSecurityGroup
-      KeyName: !Ref KeyPair
+      KeyName: myinstance
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -77,7 +77,7 @@ Resources:
 Parameters:
   KeyPair:
     Description: 'Name of an existing EC2 KeyPair to allow SSH access to the instance'
-    Type: AWS::EC2::KeyPair::KeyName
+    Type: AWS::EC2::KeyPair::myinstance
 
 Outputs:
   WebsiteURL:
